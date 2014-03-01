@@ -1,0 +1,25 @@
+@import "includes/variables.less";
+@import "includes/mixins.less";
+@import "includes/reset.less";
+@import "includes/base.less";
+@import "includes/fonts.less";
+@import "includes/grid.less";
+@import "includes/wordpress.less";
+
+// Wraps around everything including the header
+#page {
+    .container();
+}
+
+// Main content
+#primary {
+    .column(10);
+}
+
+// Sidebar
+#secondary {
+    .column(4);
+    .push(1);
+}
+
+@import "media-queries"; // Media queries a.k.a make this fucking work on my iPhone file
