@@ -133,10 +133,6 @@ function theme_scripts()
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
     }
-
-    if ( is_singular() && wp_attachment_is_image() ) {
-        wp_enqueue_script( 'theme-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), null, true );
-    }
 }
 add_action( 'wp_enqueue_scripts', 'theme_scripts' );
 
