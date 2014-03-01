@@ -104,9 +104,9 @@ function theme_scripts()
     wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
     wp_enqueue_style( 'theme-mainstyle', get_template_directory_uri() . '/css/theme.css' );
 
-    wp_enqueue_script( 'theme-modernizr', get_template_directory_uri() . '/js/modernizr.js', array(), "2.7.1", false );
+    wp_enqueue_script( 'theme-modernizr', get_template_directory_uri() . '/js/libs/modernizr.js', array(), "2.7.1", false );
 
-    wp_enqueue_script( 'response-js', get_template_directory_uri() . '/js/response-0.7.12.min.js', array("jquery"), "0.7.12", true );
+    wp_enqueue_script( 'response-js', get_template_directory_uri() . '/js/libs/response-0.7.12.min.js', array("jquery"), "0.7.12", true );
     wp_enqueue_script( 'theme-mainscript', get_template_directory_uri() . '/js/theme.js', array('jquery'), null, true );
 
     $post_id        = (isset($post->ID)) ? $post->ID : 0;
