@@ -44,21 +44,6 @@ function theme_body_classes( $classes ) {
 add_filter( 'body_class', 'theme_body_classes' );
 
 /**
- * Filter in a link to a content ID attribute for the next/previous image links on image attachment pages
- */
-function theme_enhanced_image_navigation( $url, $id ) {
-	if ( ! is_attachment() && ! wp_attachment_is_image( $id ) )
-		return $url;
-
-	$image = get_post( $id );
-	if ( ! empty( $image->post_parent ) && $image->post_parent != $id )
-		$url .= '#main';
-
-	return $url;
-}
-add_filter( 'attachment_link', 'theme_enhanced_image_navigation', 10, 2 );
-
-/**
  * Filters wp_title to print a neat <title> tag based on what is being viewed.
  */
 function theme_wp_title( $title, $sep ) {
