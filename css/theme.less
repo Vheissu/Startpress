@@ -6,20 +6,76 @@
 @import "includes/grid.less";
 @import "includes/wordpress.less";
 
-// Wraps around everything including the header
-#page {
-    .container();
+// Mobile first development, develop inside of media queries and be happy
+
+@media only screen and (min-width: 240px) {
+
 }
 
-// Main content
-#primary {
-    .column(10);
+@media only screen and (min-width: 320px),
+(min-device-width : 320px)
+and (max-device-width : 480px)
+and (orientation : portrait),
+(min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+
 }
 
-// Sidebar
-#secondary {
-    .column(4);
-    .push(1);
+@media only screen and (min-width: 480px),
+(min-device-width : 320px)
+and (max-device-width : 480px)
+and (orientation : landscape),
+(min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+
 }
 
-@import "media-queries"; // Media queries a.k.a make this fucking work on my iPhone file
+@media only screen and (min-width: 568px),
+(min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+
+}
+
+@media only screen and (min-width: 640px) {
+
+}
+
+@media only screen
+and (min-width: 768px),
+(min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 1),
+(min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+@media only screen and (min-width: 1024px4),
+(min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape),
+(min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 1),
+(min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 2) {
+
+}
+
+@media only screen and (min-width: 1200px) {
+
+}
+
+@media only screen and (min-width: 1366px) {
+
+}
+
