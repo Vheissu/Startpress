@@ -13,6 +13,6 @@ sitemap.xml
 wp-content/cache/
 wp-content/backups/
 sitemap.xml.gz
-css/theme.css
+css/style.css
 js/app.min.js
 js/vendor.min.js
