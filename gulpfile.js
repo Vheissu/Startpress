@@ -69,7 +69,7 @@ gulp.task('styles', function () {
 
 // minify new images
 gulp.task('images', function() {
-  var imgSrc = 'images/dev/**/*',
+  var imgSrc = 'images/**/*',
         imgDst = 'images';
 
   return gulp.src(imgSrc)
