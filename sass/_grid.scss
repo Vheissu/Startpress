@@ -38,11 +38,6 @@ $total-width: gridsystem-width($columns);
 // GRID //
 //////////
 
-body {
-    width: 100%;
-    @include clearfix();
-}
-
 @mixin container() {
     margin: 0 auto;
     max-width: gridsystem-width();

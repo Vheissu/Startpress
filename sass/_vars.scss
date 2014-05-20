@@ -1,2 +1,52 @@
+/// Core values
 
-// Define variables in here for site content
+// Grid System Values (see _grid.scss for use)
+$column-width: 80px;
+$gutter-width: 20px;
+$columns: 12;
+$total-width: 100%;
+
+$base-font-size: 100%; // 16px
+$base-line-height: 150%; // Equals 24px if base font size is 16px
+$base-em-font: 16;
+
+// Base body styling
+$body-bg: #fff;
+$body-font-color: #222;
+$body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-weight: normal;
+$body-font-style: normal;
+$body-text-rendering: optimizeLegibility;
+
+// Heading default style
+$heading-font-color: #1E1E1E;
+$heading-font-family: inherit;
+$heading-font-weight: bold;
+$heading-font-style: normal;
+$heading-text-rendering: optimizeLegibility;
+
+// Paragraph default style
+$paragraph-font-family: inherit;
+$paragraph-font-weight: normal;
+$paragraph-font-style: normal;
+$paragraph-font-size: 1em;
+$paragraph-line-height: 1.6;
+$paragraph-margin-bottom: emcalc(20);
+$paragraph-text-rendering: optimizeLegibility;
+
+
+// Faux bold font issue fix (sometimes this can cause problems)
+$body-font-fix: false;
+$heading-font-fix: false;
+$bold-font-fix: false;
+$paragraph-font-fix: false;
+
+
+/// Media query settings
+
+$small-screen: 768px;
+$medium-screen: 1280px;
+$large-screen: 1440px;
+
+$landscape: "only screen and (orientation: landscape)";
+$portrait: "only screen and (orientation: portrait)";

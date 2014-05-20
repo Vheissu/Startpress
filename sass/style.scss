@@ -1,16 +1,30 @@
-// This is merely a file that binds styles together
-// It is recommended files you want include in this main style file
-// To be imported in the same format below
-
-// Remember unless you want generated CSS to be in separate files, includes
-// must start with an underscore or it will be generated as a separate file and not
-// bundled into the main style.css in the css folder
-
-// Any global styles (style used mostly on every page) should be defined
-// in the sass/_global.scss file
-
-@import "compass/reset";
 @import "core";
-@import "base";
-@import "global";
-@import "responsive";
+@import "reset";
+
+body {
+    background: $body-bg;
+    color: $body-font-color;
+    font-family: $body-font-family;
+    font-style: $body-font-style;
+    font-weight: $body-font-weight;
+    text-rendering: $body-text-rendering;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: $heading-font-color;
+    font-family: $heading-font-family;
+    font-style: $heading-font-style;
+    font-weight: $heading-font-weight;
+    text-rendering: $heading-text-rendering;
+}
+
+p {
+    color: $paragraph-font-color;
+    font-family: $paragraph-font-family;
+    font-size: $paragraph-font-size;
+    font-style: $paragraph-font-style;
+    font-weight: $paragraph-font-weight;
+    line-height: $paragraph-line-height;
+    margin: 0 0 $paragraph-margin-bottom 0;
+    text-rendering: $paragraph-text-rendering;
+}

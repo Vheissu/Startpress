@@ -1,12 +1,7 @@
-// The core file is a set of variables, mixins and core functions that any file
-// being used in this project would most likely need.
-
-// For each separate file, make sure you include this first via
-// import "core";
-
 @import "compass/utilities";
 @import "compass/css3";
-
-@import "mixins";
+@import "grid";
 
 @import "vars";
+
+@import "mixins";

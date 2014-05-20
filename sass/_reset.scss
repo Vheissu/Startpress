@@ -1,0 +1,131 @@
+* {
+    @include box-sizing(border-box);
+    position: relative;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+html {
+    background: #FFF;
+    color: #111;
+    font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+a {
+    text-decoration: none; // Sometimes you spend more time removing this then you need it
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, serif;
+    font-size: 1em;
+}
+
+small {
+    font-size: 80%;
+}
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+img {
+    border: none;
+}
+
+iframe,
+object,
+video,
+audio {
+    max-width: 100%;
+}
+
+iframe,
+object,
+img {
+    height: auto;
+}
+
+button,
+input,
+select,
+textarea {
+    border: none;
+    color: inherit;
+    font-family: inherit;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+if ($body-font-fix == true) {
+    body {
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+    }
+}
+
+if ($heading-font-fix == true) {
+    h1, h2, h3, h4, h5, h6 {
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+    }
+}
+
+if ($bold-font-fix == true) {
+    b,
+    strong {
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+    }
+}
+
+if ($paragraph-font-fix == true) {
+    p {
+        -webkit-font-smoothing: antialiased;
+        font-smoothing: antialiased;
+    }
+}

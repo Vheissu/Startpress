@@ -1,47 +1,12 @@
-@mixin respond-to($media) {
-    @if $media == handhelds {
-        @media only screen and (min-width: 1px) { @content; }
-    }
-    @else if $media == wide-handhelds {
-        @media only screen and (min-width: 480px) { @content; }
-    }
-    @else if $media == tablets {
-        @media only screen and (min-width: 640px) { @content; }
-    }
-    @else if $media == tablets-wide {
-        @media only screen and (min-width: 1024px) { @content; }
-    }
+@function emcalc($size, $base: $base-em-font) {
+    @return ($size/$base) * 1em;
 }
 
-@mixin height($value, $parent: 1200) {
-    height: percentage($value/$parent);
+@mixin font-size($size, $base: $base-em-font) {
+    font-size: emcalc($size, $base);
 }
 
-@mixin margin-left($value, $parent: 1200) {
-    margin-left: percentage($value/$parent);
-}
-
-@mixin margin-right($value, $parent: 1200) {
-    margin-right: percentage($value/$parent);
-}
-
-@mixin width($value, $parent: 1200) {
-    width: percentage($value/$parent);
-}
-
-@mixin clearfix() {
-    *zoom:1;
-
-    &:before,
-    &:after {
-        content:"";
-        display:table;
-    }
-    &:after {
-        clear:both;
-    }
-}
-
+// The text-indent: -9999em method is dangerous and outdated
 @mixin text-indent() {
     overflow: hidden;
     text-indent: 100%;
@@ -69,28 +34,36 @@
     }
 }
 
-@mixin animation ($animation, $duration, $delay, $iteration) {
-    -webkit-animation-delay: $delay;
-    -webkit-animation-duration: $duration;
+@mixin animation ($animation, $duration: 0.3s, $timing-func: ease, $delay: 0, $iteration: 1, $direction: normal, $fill-mode: none) {
     -webkit-animation-name: $animation;
-    -webkit-animation-fill-mode: both;
+    -webkit-animation-delay: $delay;
+    -webkit-animation-timing-function: $timing-func;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-fill-mode: $fill-mode;
     -webkit-animation-iteration-count: $iteration;
+    -webkit-animation-direction: $direction;
 
-    -moz-animation-delay: $delay;
-    -moz-animation-duration: $duration;
     -moz-animation-name: $animation;
-    -moz-animation-fill-mode: both;
+    -moz-animation-delay: $delay;
+    -moz-animation-timing-function: $timing-func;
+    -moz-animation-duration: $duration;
+    -moz-animation-fill-mode: $fill-mode;
     -moz-animation-iteration-count: $iteration;
+    -moz-animation-direction: $direction;
 
-    -o-animation-delay: $delay;
-    -o-animation-duration: $duration;
     -o-animation-name: $animation;
-    -o-animation-fill-mode: both;
+    -o-animation-delay: $delay;
+    -o-animation-timing-function: $timing-func;
+    -o-animation-duration: $duration;
+    -o-animation-fill-mode: $fill-mode;
     -o-animation-iteration-count: $iteration;
+    -o-animation-direction: $direction;
 
-    animation-delay: $delay;
-    animation-duration: $duration;
     animation-name: $animation;
-    animation-fill-mode: both;
+    animation-delay: $delay;
+    animation-timing-function: $timing-func;
+    animation-duration: $duration;
+    animation-fill-mode: $fill-mode;
     animation-iteration-count: $iteration;
+    animation-direction: $direction;
 }
