@@ -1,3 +1,5 @@
+// Main style
+
 @import "core";
 @import "reset";
 
@@ -28,3 +30,6 @@ p {
     margin: 0 0 $paragraph-margin-bottom 0;
     text-rendering: $paragraph-text-rendering;
 }
+
+@import "global"; // Global styles (used on every page)
+@import "responsive"; // Media ueries
