@@ -1,0 +1,16 @@
+// This is merely a file that binds styles together
+// It is recommended files you want include in this main style file
+// To be imported in the same format below
+
+// Remember unless you want generated CSS to be in separate files, includes
+// must start with an underscore or it will be generated as a separate file and not
+// bundled into the main style.css in the css folder
+
+// Any global styles (style used mostly on every page) should be defined
+// in the sass/_global.scss file
+
+@import "compass/reset";
+@import "core";
+@import "base";
+@import "global";
+@import "responsive";
