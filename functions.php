@@ -102,7 +102,7 @@ function theme_scripts()
     global $post;
 
     wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'mainstyle', get_template_directory_uri() . '/css/theme.css' );
+    wp_enqueue_style( 'mainstyle', get_template_directory_uri() . '/css/style.css' );
     wp_enqueue_script( 'vendorjs', get_template_directory_uri() . '/js/vendor.min.js', array('jquery'), null, true );
     wp_enqueue_script( 'mainscript', get_template_directory_uri() . '/js/app.min.js', array('vendorjs'), null, true );
 
