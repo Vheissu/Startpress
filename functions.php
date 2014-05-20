@@ -102,12 +102,9 @@ function theme_scripts()
     global $post;
 
     wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'theme-mainstyle', get_template_directory_uri() . '/css/theme.css' );
-
-    wp_enqueue_script( 'theme-modernizr', get_template_directory_uri() . '/js/libs/modernizr.js', array(), "2.7.1", false );
-
-    wp_enqueue_script( 'response-js', get_template_directory_uri() . '/js/libs/response-0.7.12.min.js', array("jquery"), "0.7.12", true );
-    wp_enqueue_script( 'theme-mainscript', get_template_directory_uri() . '/js/theme.js', array('jquery'), null, true );
+    wp_enqueue_style( 'mainstyle', get_template_directory_uri() . '/css/theme.css' );
+    wp_enqueue_script( 'vendorjs', get_template_directory_uri() . '/js/vendor.min.js', array('jquery'), null, true );
+    wp_enqueue_script( 'mainscript', get_template_directory_uri() . '/js/app.min.js', array('vendorjs'), null, true );
 
     $post_id        = (isset($post->ID)) ? $post->ID : 0;
     $post_name  = (isset($post->post_name )) ? $post->post_name  : null;
@@ -128,7 +125,7 @@ function theme_scripts()
     );
 
     // Localize script so we can make AJAX calls in Wordpress
-    wp_localize_script( 'theme-mainscript', 'wptheme', $localise_this_mate);
+    wp_localize_script( 'mainscript', 'wptheme', $localise_this_mate);
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
