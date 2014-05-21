@@ -101,21 +101,21 @@ table {
     border-spacing: 0;
 }
 
-if ($body-font-fix == true) {
+@if ($body-font-fix == true) {
     body {
         -webkit-font-smoothing: antialiased;
         font-smoothing: antialiased;
     }
 }
 
-if ($heading-font-fix == true) {
+@if ($heading-font-fix == true) {
     h1, h2, h3, h4, h5, h6 {
         -webkit-font-smoothing: antialiased;
         font-smoothing: antialiased;
     }
 }
 
-if ($bold-font-fix == true) {
+@if ($bold-font-fix == true) {
     b,
     strong {
         -webkit-font-smoothing: antialiased;
@@ -123,7 +123,7 @@ if ($bold-font-fix == true) {
     }
 }
 
-if ($paragraph-font-fix == true) {
+@if ($paragraph-font-fix == true) {
     p {
         -webkit-font-smoothing: antialiased;
         font-smoothing: antialiased;
