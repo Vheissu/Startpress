@@ -35,6 +35,13 @@ $paragraph-line-height: 1.6;
 $paragraph-margin-bottom: emcalc(20);
 $paragraph-text-rendering: optimizeLegibility;
 
+// Form element default style
+$form-font-color: $body-font-color;
+$form-font-family: inherit;
+$form-font-size: 1em;
+$form-font-style: normal;
+$form-font-weight: normal;
+
 
 // Faux bold font issue fix (sometimes this can cause problems)
 $body-font-fix: false;

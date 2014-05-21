@@ -31,5 +31,16 @@ p {
     text-rendering: $paragraph-text-rendering;
 }
 
+input,
+button,
+select,
+textarea {
+    color: $form-font-color;
+    font-family: $form-font-family;
+    font-size: $form-font-size;
+    font-style: $form-font-style;
+    font-weight: $form-font-weight;
+}
+
 @import "global"; // Global styles (used on every page)
 @import "responsive"; // Media ueries
