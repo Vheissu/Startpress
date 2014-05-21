@@ -13,6 +13,11 @@
         post_type - If on a valid page or post, this will be populated
         post_status - If on a valid page or post, this will be populated
         post_date - If on a valid page or post, this will be populated
+
+        For example to access the current post_id you would get it like this:
+        wptheme.post_id
+
+        (inside of this Javascript file)
     */
 
     // Document ready
