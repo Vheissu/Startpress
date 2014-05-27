@@ -1,2 +1,11 @@
+.hidden                   { display: none; }
+.display-block          { display: block; }
+.display-inline          { display: inline; }
+.display-inline-block { display: inline-block; }
+
 // Global styles loaded on every page (keep this as small as possible)
 // and break out styles into separate stylesheets when you can
+
+
+// Default Wordpress styling
+@import "wordpress";
