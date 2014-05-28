@@ -9,7 +9,7 @@ function theme_json_api($template)
         global $query_string;
         global $post;
 
-        $my_query_string = $query_string . '&posts_per_page=' . (isset($_GET['posts_per_page']) ? htmlspecialchars($_GET['posts_per_page']) : 10) . (isset($_GET['offset']) ? '&offset=' . htmlspecialchars($_GET['offset']) : '');
+        $my_query_string = $query_string . '&posts_per_page=' . (isset($_GET['posts_per_page']) ? htmlspecialchars($_GET['posts_per_page']) : 15) . (isset($_GET['offset']) ? '&offset=' . htmlspecialchars($_GET['offset']) : 0);
 
         query_posts($my_query_string);
 
@@ -52,6 +52,8 @@ function theme_json_api($template)
             endwhile;
         endif;
 
+        header('Content-Type: application/json');
+        header("Content-length: ".count($result)." ");
         echo json_encode($result);
 
         return false;
