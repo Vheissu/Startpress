@@ -104,7 +104,7 @@ function theme_scripts()
     wp_enqueue_style( 'theme-style', get_stylesheet_uri() );
     wp_enqueue_style( 'mainstyle', get_template_directory_uri() . '/css/style.css' );
     wp_enqueue_script( 'vendorjs', get_template_directory_uri() . '/js/vendor.min.js', array('jquery'), null, true );
-    wp_enqueue_script( 'mainscript', get_template_directory_uri() . '/js/app.min.js', array('vendorjs'), null, true );
+    wp_enqueue_script( 'mainscript', get_template_directory_uri() . '/js/theme.min.js', array('vendorjs'), null, true );
 
     $post_id        = (isset($post->ID)) ? $post->ID : 0;
     $post_name  = (isset($post->post_name )) ? $post->post_name  : null;
