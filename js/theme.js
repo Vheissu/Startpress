@@ -40,3 +40,8 @@
     });
 
 })(jQuery, window, document);
+
+// Remove touch delay on mobile devices
+window.addEventListener('load', function() {
+    FastClick.attach(document.body);
+}, false);
