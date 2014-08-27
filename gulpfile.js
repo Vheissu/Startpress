@@ -30,7 +30,7 @@ gulp.task('watch', function() {
 gulp.task('jshint', function() {
   return gulp.src(['js/*.js', '!js/theme.min.js', '!js/vendor.min.js'])
     .pipe(plugins.jshint())
-    .pipe(plumber({ errorHandler: onError }))
+    .pipe(plugins.plumber({ errorHandler: onError }))
     .pipe(plugins.jshint.reporter('default'));
 });
 
@@ -38,7 +38,7 @@ gulp.task('jshint', function() {
 gulp.task('vendor', function() {
   return gulp.src(['js/vendor/*.js'])
     .pipe(plugins.concat('vendor.min.js'))
-    .pipe(plumber({ errorHandler: onError }))
+    .pipe(plugins.plumber({ errorHandler: onError }))
     .pipe(plugins.uglify())
     .pipe(gulp.dest('js/'));
 });
@@ -47,7 +47,7 @@ gulp.task('vendor', function() {
 gulp.task('scripts', function() {
   return gulp.src(['js/*.js', '!js/theme.min.js', '!js/vendor.min.js', '!js/vendor{,/**}'])
     .pipe(plugins.concat('theme.min.js'))
-    .pipe(plumber({ errorHandler: onError }))
+    .pipe(plugins.plumber({ errorHandler: onError }))
     .pipe(plugins.stripDebug())
     .pipe(plugins.uglify())
     .pipe(gulp.dest('js/'));
@@ -63,7 +63,7 @@ var paths = {
 gulp.task('styles', function () {
   return gulp.src(paths.styles.src)
     .pipe(plugins.rubySass({compass: true, sourcemap: true, sourcemapPath: './sass', style: 'compressed'}))
-    .pipe(plumber({errorHandler: onError }))
+    .pipe(plugins.plumber({errorHandler: onError }))
     .pipe(gulp.dest(paths.styles.dest));
 });
 
@@ -75,5 +75,6 @@ gulp.task('images', function() {
   return gulp.src(imgSrc)
     .pipe(plugins.changed(imgDst))
     .pipe(plugins.imagemin())
+    .pipe(plugins.plumber({errorHandler: onError }))
     .pipe(gulp.dest(imgDst));
 });
