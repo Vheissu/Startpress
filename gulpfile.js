@@ -1,7 +1,12 @@
 var gulp     = require('gulp'),
      plugins = require('gulp-load-plugins')({camelize: true}),
-     lr         = require('tiny-lr'),
+     lr      = require('tiny-lr'),
      server  = lr();
+
+// Error handler
+var onError = function (err) {
+  console.log(err);
+};
 
 // Lets us type "gulp" on the command line and run all of our tasks
 gulp.task('default', ['images', 'jshint', 'vendor', 'scripts', 'styles', 'watch']);
@@ -25,27 +30,27 @@ gulp.task('watch', function() {
 gulp.task('jshint', function() {
   return gulp.src(['js/*.js', '!js/theme.min.js', '!js/vendor.min.js'])
     .pipe(plugins.jshint())
-    .pipe(plugins.jshint.reporter('default'))
-    .pipe(plugins.notify({ message: 'JS Hinting task complete' }));
+    .pipe(plumber({ errorHandler: onError }))
+    .pipe(plugins.jshint.reporter('default'));
 });
 
 // Combine, minify all vendor JS
 gulp.task('vendor', function() {
   return gulp.src(['js/vendor/*.js'])
     .pipe(plugins.concat('vendor.min.js'))
+    .pipe(plumber({ errorHandler: onError }))
     .pipe(plugins.uglify())
-    .pipe(gulp.dest('js/'))
-    .pipe(plugins.notify({ message: 'Vendor JS task complete' }));
+    .pipe(gulp.dest('js/'));
 });
 
 // JS concat, strip debugging and minify
 gulp.task('scripts', function() {
   return gulp.src(['js/*.js', '!js/theme.min.js', '!js/vendor.min.js', '!js/vendor{,/**}'])
     .pipe(plugins.concat('theme.min.js'))
+    .pipe(plumber({ errorHandler: onError }))
     .pipe(plugins.stripDebug())
     .pipe(plugins.uglify())
-    .pipe(gulp.dest('js/'))
-    .pipe(plugins.notify({ message: 'Scripts task complete' }));
+    .pipe(gulp.dest('js/'));
 });
 
 var paths = {
@@ -57,24 +62,18 @@ var paths = {
 
 gulp.task('styles', function () {
   return gulp.src(paths.styles.src)
-    .pipe(plugins.compass({
-      config_file: 'config.rb',
-      css: 'css',
-      sass: 'sass'
-    }))
-    //.pipe(plugins.minifyCSS())
-    .pipe(gulp.dest(paths.styles.dest))
-    .pipe(plugins.notify({ message: 'Styles task complete' }));
+    .pipe(plugins.rubySass({compass: true, sourcemap: true, sourcemapPath: './sass', style: 'compressed'}))
+    .pipe(plumber({errorHandler: onError }))
+    .pipe(gulp.dest(paths.styles.dest));
 });
 
 // minify new images
 gulp.task('images', function() {
   var imgSrc = 'images/**/*',
-        imgDst = 'images';
+      imgDst = 'images';
 
   return gulp.src(imgSrc)
     .pipe(plugins.changed(imgDst))
     .pipe(plugins.imagemin())
-    .pipe(gulp.dest(imgDst))
-    .pipe(plugins.notify({ message: 'Images task complete' }));
+    .pipe(gulp.dest(imgDst));
 });
